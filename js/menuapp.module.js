@@ -1,7 +1,7 @@
 (function () {
 'use strict';
 
-angular.module('MenuApp', []);			// Do I need spinner as a dependency?
+angular.module('MenuApp', ['Data']);			// Do I need spinner as a dependency?
 
 angular.module('MenuApp')
 .config(function () {
