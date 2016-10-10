@@ -11,7 +11,7 @@
 
 		// Set up UI states
 		$stateProvider
-			.state('home', { url: '/', templateUrl: 'html/home.html' })										// definition of the 'home' state '/'
+			.state( 'home', { url: '/', templateUrl: 'html/home.html' })										// definition of the 'home' state '/'
 			.state(	'categories', { url: '/categories',
 									templateUrl: 'html/categories.template.html',
 									controller: 'CategoryListController as categoryList',
@@ -25,6 +25,7 @@
 							  resolve: {
 								items: [ '$stateParams', 'MenuDataService', function($stateParams, MenuDataService) { 
 																				console.log('here' + $stateParams.categoryId ); 
+																				// return MenuDataService.getAllCategories()
 																				return MenuDataService.getItemsForCategory( $stateParams.categoryId );
 																			}]
 				  	}});

@@ -23,19 +23,30 @@ function MenuDataService($http) {
 			});
 	};
 
-	service.getItemsForCategory = function(categoryShortName) {
-		cosole.log('getItemsForCategory');
-		return $http({ 	method: "GET", 
-						url: (ApiBasePath + "/menu_items.json"),
-						params: {
-       						category: categoryShortName
-      					}
-					})
-			.then ( function( response ) {
-				console.log( response );
-				return response.data;
-			});
-	};
+	// service.getItemsForCategory = function(categoryShortName) {
+	// 	cosole.log('getItemsForCategory');
+	// 	return $http({ 	method: "GET", 
+	// 					url: (ApiBasePath + "/menu_items.json"),
+	// 					params: {
+ //       						category: categoryShortName
+ //      					}
+	// 				})
+	// 		.then ( function( response ) {
+	// 			console.log( response );
+	// 			return response.data;
+	// 		});
+	// };
+  service.getItemsForCategory = function (categoryShortName) {
+    var response = $http({
+      method: "GET",
+      url: (ApiBasePath + "/menu_items.json"),
+      params: {
+        category: categoryShortName
+      }
+    });
+    return response;
+  };
+
 }
 
 })();
