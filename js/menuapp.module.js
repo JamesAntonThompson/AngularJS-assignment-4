@@ -1,7 +1,7 @@
 (function () {
 'use strict';
 
-	angular.module('MenuApp', ['ui-router', 'Data']);			// Dependent on ui-router and 'data'
+	angular.module('MenuApp', ['ui.router', 'Data']);			// Dependent on ui-router and 'data'
 
 // angular.module('MenuApp')
 // .config(function () {

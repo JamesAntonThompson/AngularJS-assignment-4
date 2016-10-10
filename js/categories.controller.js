@@ -1,23 +1,23 @@
 (function () {
 'use strict';
 
-angular.module('MenuApp')
-.controller('MainShoppingListController', MainShoppingListController);
+angular.module('Data')
+.controller('CategoryListController', CategoryListController);
 
 
-MainShoppingListController.$inject = ['MenuDataService'];
-function MainShoppingListController(MenuDataService) {
+CategoryListController.$inject = ['items'];
+function CategoryListController(items) {
   var mainList = this;
-  mainList.items = [];
+  mainList.items = items;
 
-  mainList.$onInit = function () {
-  	console.log('shoppingListController.onInit()');
-    MenuDataService.getAllCategories()
-    .then(function (result) {
-      mainList.items = result;
-      console.log(mainList);
-    });
-  };
+  // mainList.$onInit = function () {
+  // 	console.log('CategoryListController.onInit()');
+  //   MenuDataService.getAllCategories()
+  //   .then(function (result) {
+  //     mainList.items = result;
+  //     console.log(mainList);
+  //   });
+  // };
 }
 
 })();

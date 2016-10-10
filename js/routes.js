@@ -1,7 +1,7 @@
 (function () {
 
-	angular.module('MenuApp',['ui.router']);
-	angular.module('MenuApp').config(RoutesConfig);
+	angular.module('Data',['ui.router']);
+	angular.module('Data').config(RoutesConfig);
 
 	RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 	function RoutesConfig($stateProvider, $urlRouterProvider) {
@@ -14,7 +14,10 @@
 			.state('home', { url: '/', templateUrl: 'html/home.html' })										// definition of the 'home' state '/'
 			.state(	'categories', { url: '/categories',
 									templateUrl: 'html/categories.template.html',
-									controller: 'MainShoppingListController as categoryList' });		// definition of the 'category' state
+									controller: 'CategoryListController as categoryList',
+									resolve: {
+										items: [ 'MenuDataService', function(MenuDataService) { return MenuDataService.getAllCategories(); }]
+									}});		// definition of the 'category' state
 			
 			// .state('items', { url: '/items', templateUrl: 'html/items.template.html' });					// definition of the 'items' state
 	}
