@@ -2,7 +2,7 @@
 'use strict';
 
 	angular.module('MenuApp').component('categoryList', {
-		templateUrl: 'html/categories.template.html',
+		templateUrl: 'html/category.component.template.html',
 		bindings: {
 			items: '<'										// one-way data binding on items
 		}

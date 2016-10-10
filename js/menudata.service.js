@@ -1,7 +1,7 @@
 (function () {
 'use strict';
 
-angular.module('Data').service('MenuDataService', MenuDataService);     // Declare the 'MenuDataService' on the 'Data' module
+angular.module('MenuApp').service('MenuDataService', MenuDataService);     // Declare the 'MenuDataService' on the 'Data' module
 
 
 MenuDataService.$inject = ['$http']
@@ -11,6 +11,7 @@ function MenuDataService($http) {
 	// List of shopping items
 	var items = [];
 	var ApiBasePath = "https://davids-restaurant.herokuapp.com"
+	console.log('MenuDataService()')
 
 	//Service method
 	service.getAllCategories = function() {
@@ -18,6 +19,7 @@ function MenuDataService($http) {
 		return $http({ method: "GET", url: (ApiBasePath + "/categories.json")})
 			.then ( function( response ) {
 				console.log( response );
+				return response.data;
 				// return response.data['menu_items'].filter(
 				// 	function (item) { 
 				// 		return item.description.indexOf(searchTerm) !== -1;
@@ -30,6 +32,7 @@ function MenuDataService($http) {
 		return $http({ method: "GET", url: (ApiBasePath + "/menu_items.json")})
 			.then ( function( response ) {
 				console.log( response );
+
 			});
 	};
 }
