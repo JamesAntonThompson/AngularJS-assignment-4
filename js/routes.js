@@ -17,9 +17,18 @@
 									controller: 'CategoryListController as categoryList',
 									resolve: {
 										items: [ 'MenuDataService', function(MenuDataService) { return MenuDataService.getAllCategories(); }]
-									}});		// definition of the 'category' state
+									}})		// definition of the 'category' state
 			
-			// .state('items', { url: '/items', templateUrl: 'html/items.template.html' });					// definition of the 'items' state
+			.state('items', { url: '/items{categoryId}', 
+							templateUrl: 'html/items.template.html', 
+							controller: 'ItemsController as Items',
+							resolve: {
+							items: [ '$stateParams', 'MenuDataService', 
+							function($stateParams, MenuDataService) { 
+								return MenuDataService.getAllCategories()
+									.then(function(items) { return items[$stateParams];});
+							}]	
+							}});					// definition of the 'items' state
 	}
 
 })();
