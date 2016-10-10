@@ -11,7 +11,7 @@ function MenuDataService($http) {
 	// List of shopping items
 	var items = [];
 	var ApiBasePath = "https://davids-restaurant.herokuapp.com"
-	console.log('MenuDataService()')
+	console.log('MenuDataService()');
 
 	//Service method
 	service.getAllCategories = function() {
@@ -25,7 +25,12 @@ function MenuDataService($http) {
 
 	service.getItemsForCategory = function(categoryShortName) {
 		cosole.log('getItemsForCategory');
-		return $http({ method: "GET", url: (ApiBasePath + "/menu_items.json")})
+		return $http({ 	method: "GET", 
+						url: (ApiBasePath + "/menu_items.json"),
+						params: {
+       						category: categoryShortName
+      					}
+					})
 			.then ( function( response ) {
 				console.log( response );
 				return response.data;

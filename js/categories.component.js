@@ -9,32 +9,3 @@
 	});
 })();
 
-
-
-// (function () {
-// 'use strict';
-//
-// angular.module('ShoppingList')
-// .component('shoppingList', {
-//   templateUrl: 'src/shoppinglist/templates/shoppinglist.template.html',
-//   bindings: {
-//     items: '<'
-//   }
-// });
-
-// })();
-
-
-
-// (function () {
-// 'use strict';
-
-// angular.module('MenuApp')
-// .component('categoriesList', {
-//   templateUrl: 'src/templates/categorieslist.template.html',
-//   bindings: {
-//     items: '<'
-//   }
-// });
-
-// })();
