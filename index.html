@@ -5,19 +5,22 @@
 		<title>Angular Week 4 Assignment</title>
 		<script type="text/javascript" src="lib/angular.min.js"></script>
 		<script type="text/javascript" src="lib/angular-ui-router.min.js"></script>
+		<script type="text/javascript" src="js/data.module.js"></script>
 		<script type="text/javascript" src="js/menuapp.module.js"></script>
 		<!-- Routes -->
 		<script type="text/javascript" src="js/routes.js"></script>
-		<script type="text/javascript" src="js/data.module.js"></script>
+		
+		<script type="text/javascript" src="js/categories.controller.js"></script>
 		<script type="text/javascript" src="js/categories.component.js"></script>
+		<script type="text/javascript" src="js/menudata.service.js"></script>
 		<meta charset="utf-8">
 	</head>
 	<body ng-app="MenuApp">
 		<div>
 			<h1>Welcome to our restaurant</h1>
-			<button ui-sref="home">restart</button>	
+			<!-- <button ui-sref="home">restart</button>	 -->
 		</div>
-		<a ui-sref="categories">click</a>
+		
       <!-- <a ui-sref="tab2" ui-sref-active="activeTab">Tab 2</a> -->
       <!-- <button ui-sref="tab2">Tab 2</button> -->
       	<ui-view></ui-view>

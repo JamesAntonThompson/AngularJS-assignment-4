@@ -12,7 +12,8 @@
 		// Set up UI states
 		$stateProvider
 			.state('home', { url: '/', templateUrl: 'html/home.html' })										// definition of the 'home' state '/'
-			.state('categories', { url: '/categories', templateUrl: 'html/categories.template.html' })		// definition of the 'category' state
+			.state(	'categories', { url: '/categories', templateUrl: 'html/categories.template.html' })		// definition of the 'category' state
+			
 			.state('items', { url: '/items', templateUrl: 'html/items.template.html' });					// definition of the 'items' state
 	}
 
