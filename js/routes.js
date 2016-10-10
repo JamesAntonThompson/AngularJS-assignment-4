@@ -21,7 +21,7 @@
 			
 			.state('items', { url: '/items/{categoryId}', 
 							  templateUrl: 'html/items.template.html',
-							  controller: "ItemsListController as itemlist",
+							  controller: "ItemsListController as itemList",
 							  resolve: {
 								items: [ '$stateParams', 'MenuDataService', function($stateParams, MenuDataService) { 
 																				console.log('here' + $stateParams.categoryId ); 
@@ -29,22 +29,6 @@
 																				return MenuDataService.getItemsForCategory( $stateParams.categoryId );
 																			}]
 				  	}});
-							  // controller: 'ItemsController as itemList',
-
-
-			// 				   });
-
-
-			// controller: "ItemsListController as itemlist",
-   //  resolve: {
-   //    items: ['$stateParams', 'MenuDataService',
-   //          function ($stateParams, MenuDataService) {
-   //            return MenuDataService.getItemsForCategory($stateParams.category);
       }
-							// controller: 'ItemsController as Items',
-							// resolve: {
-							// items: [ '$stateParams', 'MenuDataService', function(MenuDataService) { return MenuDataService.getItemsForCategory( $stateParams.categoryId ); }]
-							// }});
-												// definition of the 'items' state
 
 })();
